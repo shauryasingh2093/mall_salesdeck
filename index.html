@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>West Edmonton Mall — Commercial Opportunities</title>
+  <meta name="description" content="West Edmonton Mall interactive sales deck. North America's #1 retail and entertainment destination — leasing, sponsorship, and events." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- LEFT NAVIGATION RAIL -->
+  <nav class="rail" id="rail" aria-label="Story navigation">
+    <a href="#" class="rail-brand" aria-label="West Edmonton Mall">
+      <img src="assets/wem-logo.png" alt="WEM" class="rail-logo-img" />
+      <span class="rail-brand-name">West Edmonton Mall</span>
+    </a>
+
+    <div class="rail-nav" role="tablist" aria-label="Scene navigation">
+      <button class="rail-item active" data-go="0" role="tab" aria-selected="true">
+        <span class="rail-dot"></span><span class="rail-label">Overview</span>
+      </button>
+      <button class="rail-item" data-go="1" role="tab" aria-selected="false">
+        <span class="rail-dot"></span><span class="rail-label">Scale &amp; Presence</span>
+      </button>
+      <button class="rail-item" data-go="2" role="tab" aria-selected="false">
+        <span class="rail-dot"></span><span class="rail-label">Entertainment</span>
+      </button>
+      <button class="rail-item" data-go="3" role="tab" aria-selected="false">
+        <span class="rail-dot"></span><span class="rail-label">Luxury &amp; Dining</span>
+      </button>
+      <button class="rail-item" data-go="4" role="tab" aria-selected="false">
+        <span class="rail-dot"></span><span class="rail-label">Events &amp; Venues</span>
+      </button>
+      <button class="rail-item" data-go="5" role="tab" aria-selected="false">
+        <span class="rail-dot"></span><span class="rail-label">Leasing</span>
+      </button>
+      <button class="rail-item" data-go="6" role="tab" aria-selected="false">
+        <span class="rail-dot"></span><span class="rail-label">Hospitality</span>
+      </button>
+      <button class="rail-item" data-go="7" role="tab" aria-selected="false">
+        <span class="rail-dot"></span><span class="rail-label">Contact Sales</span>
+      </button>
+    </div>
+
+    <div class="rail-footer">
+      <button class="rail-cta-btn" data-modal="modal-schedule">Schedule a Call</button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ SCENES ═══════════════ -->
+  <div class="scenes-wrap" id="scenes-wrap">
+
+    <!-- ══ SCENE 0 — CINEMATIC INTRO ══ -->
+    <section class="scene active" id="scene-0" data-scene="0">
+      <div class="scene-bg">
+        <video class="scene-video" autoplay muted loop playsinline poster="assets/hero.png">
+          <source src="assets/Luxury_Mall_Opening_Shot_Generation.mp4" type="video/mp4" />
+        </video>
+        <div class="scene-overlay overlay-deep"></div>
+        <div class="scene-vignette"></div>
+      </div>
+      <div class="scene-body s0-body">
+        <div class="s0-content">
+          <img src="assets/wem-logo.png" alt="West Edmonton Mall" class="s0-logo" />
+          <h1 class="s0-headline">
+            <span class="s0-line1">North America's</span>
+            <em class="s0-line2">Ultimate Destination</em>
+          </h1>
+          <p class="s0-tagline">Edmonton · Alberta · Canada</p>
+          <div class="s0-meta-row">
+            <div class="s0-meta-item"><strong>800+</strong>Stores</div>
+            <div class="s0-meta-div"></div>
+            <div class="s0-meta-item"><strong>30M+</strong>Annual Visitors</div>
+            <div class="s0-meta-div"></div>
+            <div class="s0-meta-item"><strong>5.3M</strong>Sq Ft GLA</div>
+            <div class="s0-meta-div"></div>
+            <div class="s0-meta-item"><strong>#1</strong>Western Canada</div>
+          </div>
+          <div class="s0-actions">
+            <button class="deck-btn btn-white" id="s0-begin">Explore the Opportunity</button>
+            <button class="deck-btn btn-ghost" data-modal="modal-schedule">Schedule a Call</button>
+          </div>
+        </div>
+      </div>
+      <div class="scene-hint">
+        <div class="hint-line"></div>
+        <span>Scroll to explore</span>
+      </div>
+    </section>
+
+    <!-- ══ SCENE 1 — SCALE & PRESENCE (Atrium) ══ -->
+    <section class="scene scene-split" id="scene-1" data-scene="1">
+      <div class="scene-body scene-body--split">
+
+        <!-- Interactive Image Panel -->
+        <div class="img-panel" data-zone="atrium" data-lightbox="assets/atrium.png" data-lb-title="Grand Central Atrium" data-lb-desc="The property's primary branding and activation hub." tabindex="0" role="button" aria-label="Explore Grand Central Atrium">
+          <img src="assets/atrium.png" alt="Grand Central Atrium" class="img-fill" />
+          <div class="img-overlay img-overlay--right"></div>
+          <div class="img-hover-ui">
+            <div class="img-hover-pill">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              Explore Zone
+            </div>
+          </div>
+          <div class="img-float-badge" style="bottom:28px; left:28px;">
+            <span class="ifb-val">30M+</span>
+            <span class="ifb-lbl">Annual Visitors</span>
+          </div>
+          <div class="img-float-badge" style="top:28px; right:28px;">
+            <span class="ifb-val">20,000+</span>
+            <span class="ifb-lbl">Parking Spaces</span>
+          </div>
+          <div class="img-scene-tag">01 / 08</div>
+        </div>
+
+        <!-- Editorial Text Panel -->
+        <div class="text-panel">
+          <div class="scene-label">Scale &amp; Presence</div>
+          <h2 class="scene-heading">800+ Stores<br /><em>&amp; Experiences</em></h2>
+          <p class="scene-sub">North America's largest enclosed mall — an ecosystem beyond retail. Entertainment, dining, attractions, and hospitality converge under one iconic roof in Edmonton, Alberta.</p>
+
+          <div class="tp-stats">
+            <div class="tp-stat"><span class="tp-val">800+</span><span class="tp-lbl">Retail Stores</span></div>
+            <div class="tp-stat"><span class="tp-val">5.3M</span><span class="tp-lbl">sqft GLA</span></div>
+            <div class="tp-stat"><span class="tp-val">$98K</span><span class="tp-lbl">Avg. HH Income</span></div>
+          </div>
+
+          <div class="tp-chips">
+            <span class="tp-chip">110+ Dining Concepts</span>
+            <span class="tp-chip">4 Major Attractions</span>
+            <span class="tp-chip">354 Hotel Rooms</span>
+            <span class="tp-chip">200+ Annual Events</span>
+          </div>
+
+          <div class="tp-actions">
+            <button class="deck-btn btn-white" data-go="5">Explore Leasing →</button>
+            <button class="deck-btn btn-outline" data-modal="modal-schedule">Talk to a Leasing Expert</button>
+          </div>
+
+          <!-- EXPERIENCE CAROUSEL -->
+          <div class="tp-carousel-wrap">
+            <div class="carousel-header">
+              <span class="carousel-title">Experience the Destination</span>
+              <div class="carousel-nav">
+                <button class="c-nav-btn" id="c-prev"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+                <button class="c-nav-btn" id="c-next"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+              </div>
+            </div>
+            <div class="carousel-track-container">
+              <div class="carousel-track" id="experience-carousel">
+                <div class="carousel-slide" data-lightbox="assets/crowd_event.png" data-lb-title="Visitor Scale" data-lb-desc="Unrivalled footfall across 52 weeks a year.">
+                  <img src="assets/crowd_event.png" alt="Retail Corridor" />
+                  <div class="slide-label">Retail</div>
+                </div>
+                <div class="carousel-slide" data-lightbox="assets/amusement.png" data-lb-title="World-Class Attractions" data-lb-desc="Sponsorship opportunities across 12 venues.">
+                  <img src="assets/amusement.png" alt="Attractions" />
+                  <div class="slide-label">Attractions</div>
+                </div>
+                <div class="carousel-slide" data-lightbox="assets/brbn_street.png" data-lb-title="BRBN St. Dining" data-lb-desc="The region's premier nightlife and F&B district.">
+                  <img src="assets/brbn_street.png" alt="Dining" />
+                  <div class="slide-label">Dining</div>
+                </div>
+                <div class="carousel-slide" data-lightbox="assets/hotel.png" data-lb-title="Hospitality" data-lb-desc="354 Rooms of on-site luxury and corporate lodging.">
+                  <img src="assets/hotel.png" alt="Hospitality" />
+                  <div class="slide-label">Hospitality</div>
+                </div>
+                <div class="carousel-slide" data-lightbox="assets/ice_rink.png" data-lb-title="Event Venues" data-lb-desc="200+ Programmed events annually.">
+                  <img src="assets/ice_rink.png" alt="Events" />
+                  <div class="slide-label">Events</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SCENE 2 — ENTERTAINMENT ECOSYSTEM ══ -->
+    <section class="scene" id="scene-2" data-scene="2">
+      <div class="scene-bg">
+        <img src="assets/waterpark.png" alt="" class="scene-bg-img" id="s2-bg" />
+        <div class="scene-overlay overlay-bottom-heavy"></div>
+        <div class="s2-top-vignette"></div>
+      </div>
+      <div class="scene-body s2-body">
+        <div class="s2-top">
+          <div class="scene-label s2-label">Entertainment Ecosystem</div>
+          <div class="s2-attr-nav" role="tablist">
+            <button class="s2-attr-btn active" data-attr="waterpark" role="tab">World Waterpark</button>
+            <button class="s2-attr-btn" data-attr="galaxyland" role="tab">Galaxyland</button>
+            <button class="s2-attr-btn" data-attr="icerink" role="tab">Ice Palace</button>
+            <button class="s2-attr-btn" data-attr="marinelife" role="tab">Marine Life</button>
+          </div>
+        </div>
+        <div class="s2-content">
+          <div class="s2-info">
+            <h2 class="s2-heading" id="s2-attr-name">World Waterpark</h2>
+            <p class="s2-attr-sub" id="s2-attr-sub">North America's largest indoor waterpark. 5 acres, 17 water slides, a wave pool and beach area — 2M+ annual visitors and 400K event-day brand reach.</p>
+            <div class="s2-attr-stats" id="s2-attr-stats">
+              <div class="s2-stat"><strong>5 Acres</strong><span>Indoor Space</span></div>
+              <div class="s2-stat"><strong>2M+</strong><span>Annual Visits</span></div>
+              <div class="s2-stat"><strong>17</strong><span>Water Slides</span></div>
+              <div class="s2-stat"><strong>400K</strong><span>Event-Day Reach</span></div>
+            </div>
+            <div class="s2-opps">
+              <span class="s2-opp-label">Opportunities:</span>
+              <div class="s2-opp-chips" id="s2-opp-chips">
+                <span class="s2-opp-chip">Naming Rights</span>
+                <span class="s2-opp-chip">Branded Slides</span>
+                <span class="s2-opp-chip">Splash Zone</span>
+                <span class="s2-opp-chip">Exclusive Buyout</span>
+                <span class="s2-opp-chip">Digital OOH</span>
+              </div>
+            </div>
+          </div>
+          <div class="s2-actions">
+            <button class="deck-btn btn-white" id="s2-explore-btn" data-modal="modal-attraction" data-attraction="waterpark">Book Activation</button>
+            <button class="deck-btn btn-outline" data-modal="modal-sponsor" data-tier="Attraction Sponsorship">Request Sponsorship Deck</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SCENE 3 — LUXURY & DINING ══ -->
+    <section class="scene scene-split scene-split--rev" id="scene-3" data-scene="3">
+      <div class="scene-body scene-body--split">
+
+        <!-- Text Panel (left in reversed layout) -->
+        <div class="text-panel">
+          <div class="scene-label">Luxury Retail &amp; Dining</div>
+          <h2 class="scene-heading">Luxury +<br /><em>Dining Destination</em></h2>
+          <p class="scene-sub">Europa Boulevard and BRBN St. represent the finest in Western Canadian luxury retail and curated dining. Premium corridor positioning, highest income demographics, and the longest dwell times in the property.</p>
+
+          <div class="tp-stats">
+            <div class="tp-stat"><span class="tp-val">$98K+</span><span class="tp-lbl">Avg. HH Income</span></div>
+            <div class="tp-stat"><span class="tp-val">3.4 hrs</span><span class="tp-lbl">Avg. Dwell Time</span></div>
+            <div class="tp-stat"><span class="tp-val">28 min</span><span class="tp-lbl">Luxury Corridor</span></div>
+          </div>
+
+          <div class="tp-brands">
+            <div class="tp-brands-label">Luxury Tenants</div>
+            <div class="tp-brand-list">
+              <span>Louis Vuitton</span><span class="sep">·</span>
+              <span>Hermès</span><span class="sep">·</span>
+              <span>Tiffany &amp; Co.</span><span class="sep">·</span>
+              <span>Cartier</span><span class="sep">·</span>
+              <span>Gucci</span>
+            </div>
+          </div>
+
+          <div class="tp-actions">
+            <button class="deck-btn btn-white" data-modal="modal-schedule" data-unit="Luxury / Dining Position">Apply for Luxury Position</button>
+            <button class="deck-btn btn-outline" data-go="5">View All Leasing →</button>
+          </div>
+        </div>
+
+        <!-- Interactive Image Panel (right) -->
+        <div class="img-panel" data-zone="luxury" data-lightbox="assets/europa.png" data-lb-title="Europa Boulevard" data-lb-desc="A curated luxury wing home to elite global brands." tabindex="0" role="button" aria-label="Explore Europa Boulevard">
+          <img src="assets/europa.png" alt="Europa Boulevard luxury retail" class="img-fill" />
+          <div class="img-overlay img-overlay--left"></div>
+          <div class="img-hover-ui">
+            <div class="img-hover-pill">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              Explore Europa Blvd
+            </div>
+          </div>
+          <div class="img-float-badge" style="top:28px; left:28px;">
+            <span class="ifb-val">BRBN St.</span>
+            <span class="ifb-lbl">Dining & Nightlife</span>
+          </div>
+          <div class="img-float-badge" style="bottom:28px; right:28px;">
+            <span class="ifb-val">Tier 1</span>
+            <span class="ifb-lbl">Luxury Positioning</span>
+          </div>
+          <div class="img-scene-tag">03 / 08</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SCENE 4 — EVENTS & VENUES (Ice Palace) ══ -->
+    <section class="scene" id="scene-4" data-scene="4">
+      <div class="scene-bg">
+        <img src="assets/ice_rink.png" alt="" class="scene-bg-img" style="filter:brightness(0.55) saturate(0.75);" />
+        <div class="scene-overlay overlay-deep"></div>
+      </div>
+      <div class="scene-body s4-body">
+        <div class="s4-content">
+          <div class="scene-label">Events, Sponsorships &amp; Brand Activations</div>
+          <h2 class="s4-heading">Where <em>Moments Are Made</em></h2>
+          <p class="scene-sub s4-sub">200+ programmed events per year. 8,000-seat capacity. Concerts, corporate summits, product launches, and fashion shows — all within a 30M-visitor destination with full AV infrastructure.</p>
+
+          <div class="s4-grid">
+            <div class="s4-venue-card" data-zone="icerink" tabindex="0" role="button">
+              <div class="s4-vc-img"><img src="assets/ice_rink.png" alt="Ice Palace" /></div>
+              <div class="s4-vc-info">
+                <div class="s4-vc-name">Ice Palace</div>
+                <div class="s4-vc-cap">NHL-reg · 2,500 capacity</div>
+              </div>
+            </div>
+            <div class="s4-venue-card" data-zone="waterpark" tabindex="0" role="button">
+              <div class="s4-vc-img"><img src="assets/waterpark.png" alt="World Waterpark" /></div>
+              <div class="s4-vc-info">
+                <div class="s4-vc-name">World Waterpark</div>
+                <div class="s4-vc-cap">Exclusive buyout · 5 acres</div>
+              </div>
+            </div>
+            <div class="s4-venue-card" data-zone="atrium" tabindex="0" role="button">
+              <div class="s4-vc-img"><img src="assets/atrium.png" alt="Grand Atrium" /></div>
+              <div class="s4-vc-info">
+                <div class="s4-vc-name">Grand Atrium</div>
+                <div class="s4-vc-cap">Brand activations · 8,000 cap</div>
+              </div>
+            </div>
+            <div class="s4-venue-card" data-zone="galaxyland" tabindex="0" role="button">
+              <div class="s4-vc-img"><img src="assets/amusement.png" alt="Galaxyland" /></div>
+              <div class="s4-vc-info">
+                <div class="s4-vc-name">Galaxyland</div>
+                <div class="s4-vc-cap">Experiential · 1.5M visits</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="s4-actions">
+            <button class="deck-btn btn-white" data-modal="modal-book-event">Book Event Space</button>
+            <button class="deck-btn btn-outline" data-modal="modal-partner">Discuss Partnership</button>
+            <button class="deck-btn btn-gold" data-modal="modal-sponsor" data-tier="Custom">Request Sponsorship Proposal</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SCENE 5 — COMMERCIAL LEASING ══ -->
+    <section class="scene scene-split" id="scene-5" data-scene="5">
+      <div class="scene-body scene-body--split">
+
+        <!-- Image Panel -->
+        <div class="img-panel" data-zone="luxury" tabindex="0" role="button" aria-label="Explore luxury retail floor">
+          <img src="assets/luxury_retail.png" alt="Luxury Retail Floor" class="img-fill" />
+          <div class="img-overlay img-overlay--right"></div>
+          <div class="img-hover-ui">
+            <div class="img-hover-pill">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              View Zone Details
+            </div>
+          </div>
+          <div class="img-float-badge">
+            <span class="ifb-val">76</span>
+            <span class="ifb-lbl">Units Available</span>
+          </div>
+          <div class="img-scene-tag">05 / 08</div>
+        </div>
+
+        <!-- Leasing Tab Panel -->
+        <div class="text-panel text-panel--tabs">
+          <div class="scene-label">Commercial Leasing</div>
+          <h2 class="scene-heading">Find Your <em>Perfect Space</em></h2>
+
+          <div class="s5-tabs" role="tablist">
+            <button class="s5-tab active" data-lease-tab="luxury" role="tab" aria-selected="true">Luxury</button>
+            <button class="s5-tab" data-lease-tab="retail" role="tab" aria-selected="false">Retail</button>
+            <button class="s5-tab" data-lease-tab="dining" role="tab" aria-selected="false">Dining</button>
+            <button class="s5-tab" data-lease-tab="popup" role="tab" aria-selected="false">Pop-Up</button>
+          </div>
+
+          <div class="s5-panel active" id="lp-luxury">
+            <div class="s5-kv-row">
+              <div class="s5-kv"><span class="k-val">12</span><span class="k-lbl">Available Units</span></div>
+              <div class="s5-kv"><span class="k-val">$98/sqft</span><span class="k-lbl">Starting Rent</span></div>
+              <div class="s5-kv"><span class="k-val">18K–42K</span><span class="k-lbl">Daily Footfall</span></div>
+            </div>
+            <p class="s5-desc">Premium positions adjacent to Louis Vuitton, Hermès, Tiffany & Co., and Cartier. Highest-income profile in the region, Tier 1 brand positioning.</p>
+          </div>
+          <div class="s5-panel" id="lp-retail">
+            <div class="s5-kv-row">
+              <div class="s5-kv"><span class="k-val">34</span><span class="k-lbl">Available Units</span></div>
+              <div class="s5-kv"><span class="k-val">$62/sqft</span><span class="k-lbl">Starting Rent</span></div>
+              <div class="s5-kv"><span class="k-val">25K–60K</span><span class="k-lbl">Daily Footfall</span></div>
+            </div>
+            <p class="s5-desc">High-traffic lifestyle and fashion positions across all four phases. Strong anchor adjacency. Move-in ready units for brands targeting the 25–44 core demographic.</p>
+          </div>
+          <div class="s5-panel" id="lp-dining">
+            <div class="s5-kv-row">
+              <div class="s5-kv"><span class="k-val">8</span><span class="k-lbl">Available Units</span></div>
+              <div class="s5-kv"><span class="k-val">$74/sqft</span><span class="k-lbl">Starting Rent</span></div>
+              <div class="s5-kv"><span class="k-val">3.4 hrs</span><span class="k-lbl">Avg. Dwell</span></div>
+            </div>
+            <p class="s5-desc">Full-service restaurant and café positions in the Dining Atrium and West Plaza. Premium F&B environment with patio access and $68 average per-visit spend.</p>
+          </div>
+          <div class="s5-panel" id="lp-popup">
+            <div class="s5-kv-row">
+              <div class="s5-kv"><span class="k-val">22</span><span class="k-lbl">Available Spots</span></div>
+              <div class="s5-kv"><span class="k-val">Flexible</span><span class="k-lbl">Term Length</span></div>
+              <div class="s5-kv"><span class="k-val">30K+</span><span class="k-lbl">Daily Pass-By</span></div>
+            </div>
+            <p class="s5-desc">Premium kiosk and pop-up modules across all zones. Ideal for launches, seasonal campaigns, and digital-native brands testing the Alberta market. 1-week minimum.</p>
+          </div>
+
+          <div class="tp-actions">
+            <button class="deck-btn btn-white" data-modal="modal-schedule">Schedule Leasing Call</button>
+            <button class="deck-btn btn-outline" data-modal="modal-view-details" data-unit="Commercial Leasing">View All Units</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SCENE 6 — HOSPITALITY ══ -->
+    <section class="scene scene-split scene-split--rev" id="scene-6" data-scene="6">
+      <div class="scene-body scene-body--split">
+
+        <!-- Text Panel -->
+        <div class="text-panel">
+          <div class="scene-label">Hospitality &amp; Corporate</div>
+          <h2 class="scene-heading">Stay, Meet<br /><em>&amp; Experience</em></h2>
+          <p class="scene-sub">Fantasyland Hotel — Canada's most unique hotel experience — sits directly within WEM, offering corporate packages, exclusive buyouts, branded suites, and event-week residency deals for enterprise partners.</p>
+
+          <div class="tp-stats">
+            <div class="tp-stat"><span class="tp-val">354</span><span class="tp-lbl">Hotel Rooms</span></div>
+            <div class="tp-stat"><span class="tp-val">18</span><span class="tp-lbl">Theme Suites</span></div>
+            <div class="tp-stat"><span class="tp-val">4★</span><span class="tp-lbl">Rating</span></div>
+          </div>
+
+          <div class="tp-chips">
+            <span class="tp-chip">Corporate Buyout Available</span>
+            <span class="tp-chip">Branded Suite Packages</span>
+            <span class="tp-chip">Event-Week Residency</span>
+            <span class="tp-chip">In-Mall Direct Access</span>
+          </div>
+
+          <div class="tp-actions">
+            <button class="deck-btn btn-white" data-modal="modal-book-event">Enquire About Corporate Packages</button>
+            <button class="deck-btn btn-outline" data-modal="modal-schedule" data-unit="Hospitality Package">Schedule Property Tour</button>
+          </div>
+        </div>
+
+        <!-- Hotel Image Panel -->
+        <div class="img-panel" data-zone="hotel" tabindex="0" role="button" aria-label="Explore Fantasyland Hotel">
+          <img src="assets/hotel.png" alt="Fantasyland Hotel" class="img-fill" />
+          <div class="img-overlay img-overlay--left"></div>
+          <div class="img-hover-ui">
+            <div class="img-hover-pill">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              Explore Hotel
+            </div>
+          </div>
+          <div class="img-float-badge">
+            <span class="ifb-val">354</span>
+            <span class="ifb-lbl">Hotel Rooms</span>
+          </div>
+          <div class="img-scene-tag">06 / 08</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SCENE 7 — CONTACT SALES ══ -->
+    <section class="scene scene--dark" id="scene-7" data-scene="7">
+      <div class="scene-bg">
+        <div class="s7-bg-gradient"></div>
+        <img src="assets/hero.png" alt="" class="scene-bg-img" style="opacity:0.07;" />
+      </div>
+      <div class="scene-body s7-body">
+        <div class="s7-left">
+          <img src="assets/wem-logo.png" alt="WEM" class="s7-logo" />
+          <div class="scene-label">Start the Conversation</div>
+          <h2 class="s7-heading">
+            Bring Your Brand to
+            <em>North America's Ultimate Destination</em>
+          </h2>
+          <p class="scene-sub">Our commercial team responds within one business day. Tell us what you're exploring and we'll craft a proposal to match your ambition.</p>
+          <div class="s7-contacts">
+            <div class="s7-contact"><div class="s7-cl">Commercial Leasing</div><a href="tel:+17804449999" class="s7-cv">+1 (780) 444-9999</a></div>
+            <div class="s7-contact"><div class="s7-cl">Events &amp; Venue Booking</div><a href="mailto:events@wem.ca" class="s7-cv">events@wem.ca</a></div>
+            <div class="s7-contact"><div class="s7-cl">Sponsorship</div><a href="mailto:sponsorship@wem.ca" class="s7-cv">sponsorship@wem.ca</a></div>
+            <div class="s7-contact"><div class="s7-cl">Address</div><span class="s7-cv">8882 170 St NW, Edmonton AB T5T 4J2</span></div>
+          </div>
+        </div>
+        <div class="s7-right">
+          <form class="s7-form" id="s7-form" novalidate>
+            <div class="s7-form-header">Request a Commercial Briefing</div>
+            <div class="s7-form-body">
+              <div class="s7-field"><label for="s7-name">Full Name *</label><input type="text" id="s7-name" placeholder="Jane Smith" required /></div>
+              <div class="s7-field"><label for="s7-company">Company *</label><input type="text" id="s7-company" placeholder="Brand / Organisation" required /></div>
+              <div class="s7-field"><label for="s7-email">Email *</label><input type="email" id="s7-email" placeholder="jane@yourbrand.com" required /></div>
+              <div class="s7-field">
+                <label for="s7-interest">I'm interested in…</label>
+                <select id="s7-interest">
+                  <option value="" disabled selected>Select area of interest</option>
+                  <option>Retail Leasing</option><option>Luxury / Flagship Position</option>
+                  <option>Pop-Up / Short Term</option><option>Event Booking</option>
+                  <option>Sponsorship</option><option>Strategic Partnership</option><option>Corporate Hospitality</option>
+                </select>
+              </div>
+              <button type="submit" class="deck-btn btn-gold s7-submit" id="s7-submit">
+                <span id="s7-btn-text">Submit Enquiry</span>
+              </button>
+              <div class="s7-legal">24-hour response guarantee · All enquiries treated with full confidentiality</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /scenes-wrap -->
+
+  <!-- SCENE COUNTER -->
+  <div class="scene-counter" id="scene-counter">
+    <span class="sc-num" id="sc-current">01</span>
+    <span class="sc-sep">/</span>
+    <span class="sc-total">08</span>
+  </div>
+
+  <!-- NAV ARROWS -->
+  <div class="scene-arrows">
+    <button class="scene-arrow" id="scene-prev" aria-label="Previous scene" disabled>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+    <button class="scene-arrow" id="scene-next" aria-label="Next scene">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </div>
+
+  <!-- ═══════════ ZONE PANELS (slide-in drawers) ═══════════ -->
+  <div class="zp-backdrop" id="zp-backdrop" aria-hidden="true"></div>
+
+  <div class="zone-panel" id="zp-atrium" role="dialog" aria-modal="true" aria-labelledby="zp-atrium-title">
+    <button class="zp-close" data-close-zone aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="zp-img"><img src="assets/atrium.png" alt="Grand Central Atrium" /></div>
+    <div class="zp-body">
+      <div class="zp-label">Zone: Central Hub</div>
+      <h3 id="zp-atrium-title" class="zp-title">Grand Central Atrium</h3>
+      <p class="zp-desc">The beating heart of WEM. A soaring glass atrium with 30M+ annual footfall, premium event activation space, and maximum brand visibility from all four floors of the property.</p>
+      <div class="zp-stats">
+        <div class="zp-stat"><strong>400K</strong><span>Daily Footfall</span></div>
+        <div class="zp-stat"><strong>6-Floor</strong><span>Glass Ceiling</span></div>
+        <div class="zp-stat"><strong>8,000</strong><span>Event Capacity</span></div>
+        <div class="zp-stat"><strong>Prime</strong><span>OOH Position</span></div>
+      </div>
+      <div class="zp-opps">
+        <div class="zp-opps-title">Commercial Opportunities</div>
+        <div class="zp-chips">
+          <span class="zp-chip">Central Atrium Placement</span>
+          <span class="zp-chip">Seasonal Brand Activation</span>
+          <span class="zp-chip">Digital Signage Package</span>
+          <span class="zp-chip">Pop-Up Kiosk</span>
+          <span class="zp-chip">Event Naming Rights</span>
+        </div>
+      </div>
+      <div class="zp-actions">
+        <button class="deck-btn btn-gold btn-full" data-modal="modal-schedule" data-unit="Grand Central Atrium">Enquire About This Zone</button>
+        <button class="deck-btn btn-outline btn-full" data-modal="modal-book-event">Book Event Space</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="zone-panel" id="zp-luxury" role="dialog" aria-modal="true" aria-labelledby="zp-luxury-title">
+    <button class="zp-close" data-close-zone aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="zp-img"><img src="assets/europa.png" alt="Europa Boulevard" /></div>
+    <div class="zp-body">
+      <div class="zp-label">Zone: Europa Boulevard</div>
+      <h3 id="zp-luxury-title" class="zp-title">The Luxury Wing</h3>
+      <p class="zp-desc">WEM's curated luxury corridor — architecturally designed and managed to the standard of the world's premier shopping addresses. Home to Louis Vuitton, Hermès, Tiffany & Co., Cartier, and Gucci.</p>
+      <div class="zp-stats">
+        <div class="zp-stat"><strong>$98K+</strong><span>Avg. HH Income</span></div>
+        <div class="zp-stat"><strong>28 min</strong><span>Avg. Dwell Time</span></div>
+        <div class="zp-stat"><strong>12</strong><span>Units Available</span></div>
+        <div class="zp-stat"><strong>Tier 1</strong><span>Positioning</span></div>
+      </div>
+      <div class="zp-opps">
+        <div class="zp-opps-title">Commercial Opportunities</div>
+        <div class="zp-chips">
+          <span class="zp-chip">Flagship Position</span>
+          <span class="zp-chip">Corner Unit</span>
+          <span class="zp-chip">Inline Premium</span>
+          <span class="zp-chip">Pop-In Activation</span>
+          <span class="zp-chip">Window Partnership</span>
+        </div>
+      </div>
+      <div class="zp-actions">
+        <button class="deck-btn btn-gold btn-full" data-modal="modal-schedule" data-unit="Luxury Wing Position">Apply for Luxury Position</button>
+        <button class="deck-btn btn-outline btn-full" data-modal="modal-view-details" data-unit="Luxury Wing">View All Available Units</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="zone-panel" id="zp-hotel" role="dialog" aria-modal="true" aria-labelledby="zp-hotel-title">
+    <button class="zp-close" data-close-zone aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="zp-img"><img src="assets/hotel.png" alt="Fantasyland Hotel" /></div>
+    <div class="zp-body">
+      <div class="zp-label">Zone: Fantasyland Hotel</div>
+      <h3 id="zp-hotel-title" class="zp-title">Corporate Hospitality</h3>
+      <p class="zp-desc">Canada's most distinctive hotel experience — directly within WEM. 354 rooms including 18 uniquely themed suites. Full corporate buyout, branded suite packages, and exclusive event-week residency for enterprise partners.</p>
+      <div class="zp-stats">
+        <div class="zp-stat"><strong>354</strong><span>Hotel Rooms</span></div>
+        <div class="zp-stat"><strong>18</strong><span>Theme Suites</span></div>
+        <div class="zp-stat"><strong>4★</strong><span>Rating</span></div>
+        <div class="zp-stat"><strong>Direct</strong><span>Mall Access</span></div>
+      </div>
+      <div class="zp-opps">
+        <div class="zp-opps-title">Corporate Packages</div>
+        <div class="zp-chips">
+          <span class="zp-chip">Full Hotel Buyout</span>
+          <span class="zp-chip">Branded Suite</span>
+          <span class="zp-chip">Event Residency</span>
+          <span class="zp-chip">Corporate Retreat</span>
+          <span class="zp-chip">VIP Experience</span>
+        </div>
+      </div>
+      <div class="zp-actions">
+        <button class="deck-btn btn-gold btn-full" data-modal="modal-book-event">Enquire About Corporate Package</button>
+        <button class="deck-btn btn-outline btn-full" data-modal="modal-schedule" data-unit="Hospitality Package">Schedule Property Tour</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="zone-panel" id="zp-waterpark" role="dialog" aria-modal="true" aria-labelledby="zp-wp-title">
+    <button class="zp-close" data-close-zone aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="zp-img"><img src="assets/waterpark.png" alt="World Waterpark" /></div>
+    <div class="zp-body">
+      <div class="zp-label">Zone: World Waterpark</div>
+      <h3 id="zp-wp-title" class="zp-title">World Waterpark</h3>
+      <p class="zp-desc">North America's largest indoor waterpark. 5 acres, 17 water slides, a wave pool, and a beach area. 2M+ annual visitors delivering 400K event-day brand reach for sponsoring partners.</p>
+      <div class="zp-stats">
+        <div class="zp-stat"><strong>5 Acres</strong><span>Indoor</span></div>
+        <div class="zp-stat"><strong>2M+</strong><span>Annual Visits</span></div>
+        <div class="zp-stat"><strong>17</strong><span>Water Slides</span></div>
+        <div class="zp-stat"><strong>400K</strong><span>Event Reach</span></div>
+      </div>
+      <div class="zp-opps">
+        <div class="zp-opps-title">Sponsorship Opportunities</div>
+        <div class="zp-chips">
+          <span class="zp-chip">Naming Rights</span><span class="zp-chip">Branded Slides</span>
+          <span class="zp-chip">Splash Zone</span><span class="zp-chip">Exclusive Buyout</span>
+        </div>
+      </div>
+      <div class="zp-actions">
+        <button class="deck-btn btn-gold btn-full" data-modal="modal-book-event">Book Activation</button>
+        <button class="deck-btn btn-outline btn-full" data-modal="modal-sponsor" data-tier="World Waterpark Sponsorship">Request Proposal</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="zone-panel" id="zp-galaxyland" role="dialog" aria-modal="true" aria-labelledby="zp-gl-title">
+    <button class="zp-close" data-close-zone aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="zp-img"><img src="assets/amusement.png" alt="Galaxyland" /></div>
+    <div class="zp-body">
+      <div class="zp-label">Zone: Galaxyland</div>
+      <h3 id="zp-gl-title" class="zp-title">Galaxyland</h3>
+      <p class="zp-desc">North America's largest indoor amusement park. 27+ rides including a triple-loop roller coaster. 1.5M+ annual riders with massive youth and family brand reach.</p>
+      <div class="zp-stats">
+        <div class="zp-stat"><strong>27+</strong><span>Rides</span></div>
+        <div class="zp-stat"><strong>1.5M+</strong><span>Riders/yr</span></div>
+        <div class="zp-stat"><strong>2.5 Ac</strong><span>Footprint</span></div>
+        <div class="zp-stat"><strong>All Yr</strong><span>Year-Round</span></div>
+      </div>
+      <div class="zp-opps">
+        <div class="zp-opps-title">Sponsorship Opportunities</div>
+        <div class="zp-chips">
+          <span class="zp-chip">Ride Naming Rights</span><span class="zp-chip">Entrance Branding</span>
+          <span class="zp-chip">Gaming Zone</span><span class="zp-chip">Youth Loyalty</span>
+        </div>
+      </div>
+      <div class="zp-actions">
+        <button class="deck-btn btn-gold btn-full" data-modal="modal-book-event">Book Activation</button>
+        <button class="deck-btn btn-outline btn-full" data-modal="modal-sponsor" data-tier="Galaxyland Sponsorship">Request Proposal</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="zone-panel" id="zp-icerink" role="dialog" aria-modal="true" aria-labelledby="zp-ir-title">
+    <button class="zp-close" data-close-zone aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="zp-img"><img src="assets/ice_rink.png" alt="Ice Palace" /></div>
+    <div class="zp-body">
+      <div class="zp-label">Zone: Ice Palace</div>
+      <h3 id="zp-ir-title" class="zp-title">Ice Palace</h3>
+      <p class="zp-desc">Full NHL-regulation ice rink used by the Edmonton Oilers for practice sessions. 2,500 event capacity, 52-week availability, and full naming rights available.</p>
+      <div class="zp-stats">
+        <div class="zp-stat"><strong>NHL</strong><span>Standard</span></div>
+        <div class="zp-stat"><strong>2,500</strong><span>Capacity</span></div>
+        <div class="zp-stat"><strong>52 wks</strong><span>Year-Round</span></div>
+        <div class="zp-stat"><strong>200+</strong><span>Events/yr</span></div>
+      </div>
+      <div class="zp-opps">
+        <div class="zp-opps-title">Venue Opportunities</div>
+        <div class="zp-chips">
+          <span class="zp-chip">Full Naming Rights</span><span class="zp-chip">Dasherboard Ads</span>
+          <span class="zp-chip">On-Ice Logo</span><span class="zp-chip">Corporate Events</span>
+        </div>
+      </div>
+      <div class="zp-actions">
+        <button class="deck-btn btn-gold btn-full" data-modal="modal-book-event">Book the Ice Palace</button>
+        <button class="deck-btn btn-outline btn-full" data-modal="modal-sponsor" data-tier="Ice Palace Naming Rights">Request Naming Rights Deck</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ MODALS ═══════════ -->
+  <div class="modal-backdrop" id="modal-backdrop"></div>
+
+  <!-- Schedule Call -->
+  <div class="modal" id="modal-schedule" role="dialog" aria-modal="true" aria-labelledby="ms-title" hidden>
+    <div class="modal-box">
+      <div class="modal-header"><h3 id="ms-title">Schedule a Sales Call</h3><button class="modal-close" data-close-modal><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+      <div class="modal-body">
+        <p id="modal-schedule-unit-desc" class="modal-context" hidden></p>
+        <p>A senior WEM commercial team member will contact you within 24 hours.</p>
+        <form class="modal-form" id="modal-schedule-form" novalidate>
+          <div class="mf-field"><label for="ms-name">Full Name *</label><input type="text" id="ms-name" required /></div>
+          <div class="mf-field"><label for="ms-email">Email *</label><input type="email" id="ms-email" required /></div>
+          <div class="mf-field"><label for="ms-phone">Phone</label><input type="tel" id="ms-phone" placeholder="+1 (780) ..." /></div>
+          <div class="mf-field"><label for="ms-co">Company</label><input type="text" id="ms-co" /></div>
+          <button type="submit" class="deck-btn btn-dark btn-full">Confirm Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Book Event -->
+  <div class="modal" id="modal-book-event" role="dialog" aria-modal="true" aria-labelledby="be-title" hidden>
+    <div class="modal-box modal-box-lg">
+      <div class="modal-header"><h3 id="be-title">Book Event Space</h3><button class="modal-close" data-close-modal><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+      <div class="modal-body">
+        <form class="modal-form" id="modal-event-form" novalidate>
+          <div class="mf-row">
+            <div class="mf-field"><label for="ev-name">Name *</label><input type="text" id="ev-name" required /></div>
+            <div class="mf-field"><label for="ev-org">Organisation *</label><input type="text" id="ev-org" required /></div>
+          </div>
+          <div class="mf-field"><label for="ev-email">Email *</label><input type="email" id="ev-email" required /></div>
+          <div class="mf-row">
+            <div class="mf-field"><label for="ev-type">Event Type *</label><select id="ev-type" required><option value="" disabled selected>Select</option><option>Concert / Live Show</option><option>Corporate Conference</option><option>Product Launch</option><option>Brand Activation</option><option>Fashion Show</option><option>Private Gala</option></select></div>
+            <div class="mf-field"><label for="ev-cap">Attendance</label><select id="ev-cap"><option value="" disabled selected>Estimate</option><option>Under 200</option><option>200–500</option><option>500–2,000</option><option>2,000–5,000</option><option>5,000+</option></select></div>
+          </div>
+          <div class="mf-field"><label for="ev-date">Preferred Date</label><input type="text" id="ev-date" placeholder="e.g. June 2025" /></div>
+          <button type="submit" class="deck-btn btn-dark btn-full">Request Event Quote</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Partner -->
+  <div class="modal" id="modal-partner" role="dialog" aria-modal="true" aria-labelledby="p-title" hidden>
+    <div class="modal-box"><div class="modal-header"><h3 id="p-title">Partner With WEM</h3><button class="modal-close" data-close-modal><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+      <div class="modal-body"><form class="modal-form" id="modal-partner-form" novalidate>
+        <div class="mf-field"><label for="p-name">Name *</label><input type="text" id="p-name" required /></div>
+        <div class="mf-field"><label for="p-brand">Brand *</label><input type="text" id="p-brand" required /></div>
+        <div class="mf-field"><label for="p-email">Email *</label><input type="email" id="p-email" required /></div>
+        <div class="mf-field"><label for="p-vision">Vision</label><textarea id="p-vision" rows="3" placeholder="Describe your ideal partnership…"></textarea></div>
+        <button type="submit" class="deck-btn btn-dark btn-full">Submit Enquiry</button>
+      </form></div>
+    </div>
+  </div>
+
+  <!-- Sponsor -->
+  <div class="modal" id="modal-sponsor" role="dialog" aria-modal="true" aria-labelledby="sp-title" hidden>
+    <div class="modal-box"><div class="modal-header"><h3 id="sp-title">Request Sponsorship Proposal</h3><button class="modal-close" data-close-modal><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+      <div class="modal-body"><p>Tier: <strong id="sponsor-tier-name">—</strong></p>
+        <form class="modal-form" id="modal-sponsor-form" novalidate>
+          <div class="mf-field"><label for="sp-name">Name *</label><input type="text" id="sp-name" required /></div>
+          <div class="mf-field"><label for="sp-brand">Brand *</label><input type="text" id="sp-brand" required /></div>
+          <div class="mf-field"><label for="sp-email">Email *</label><input type="email" id="sp-email" required /></div>
+          <button type="submit" class="deck-btn btn-dark btn-full">Send Proposal Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- View Details -->
+  <div class="modal" id="modal-view-details" role="dialog" aria-modal="true" aria-labelledby="vd-title" hidden>
+    <div class="modal-box"><div class="modal-header"><h3 id="vd-title">Leasing Enquiry</h3><button class="modal-close" data-close-modal><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+      <div class="modal-body"><p>Contact our leasing team for full specs and availability for: <strong id="dv-name"></strong></p>
+        <form class="modal-form" id="modal-details-form" novalidate>
+          <div class="mf-field"><label for="dv-email">Email *</label><input type="email" id="dv-email" required /></div>
+          <div class="mf-field"><label for="dv-brand">Brand *</label><input type="text" id="dv-brand" required /></div>
+          <button type="submit" class="deck-btn btn-dark btn-full">Request Full Briefing Pack</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Attraction -->
+  <div class="modal" id="modal-attraction" role="dialog" aria-modal="true" aria-labelledby="at-title" hidden>
+    <div class="modal-box modal-box-lg"><div class="modal-header"><h3 id="at-title">Attraction Opportunities</h3><button class="modal-close" data-close-modal><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+      <div class="modal-body" id="modal-attraction-body"></div>
+    </div>
+  </div>
+
+  <!-- Success -->
+  <div class="modal" id="modal-success" role="dialog" aria-modal="true" aria-labelledby="sx-title" hidden>
+    <div class="modal-box"><div class="modal-header"><h3 id="sx-title">Enquiry Received</h3><button class="modal-close" data-close-modal><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+      <div class="modal-body" style="text-align:center;padding:36px 24px;">
+        <div class="success-icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h4 style="font-size:18px;font-weight:600;color:#fff;margin-bottom:10px">Thank You</h4>
+        <p style="color:rgba(255,255,255,0.6);line-height:1.7;font-size:14px">A member of our commercial team will be in touch within one business day.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lb-close" aria-label="Close Lightbox">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="lb-content">
+      <img src="" alt="" class="lb-img" id="lb-img" />
+      <div class="lb-caption">
+        <h3 class="lb-title" id="lb-title"></h3>
+        <p class="lb-desc" id="lb-desc"></p>
+        <div class="lb-actions">
+          <button class="deck-btn btn-white btn-sm" data-modal="modal-schedule">Request Opportunities</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
