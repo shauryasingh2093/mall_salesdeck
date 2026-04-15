@@ -242,7 +242,7 @@ input,select,textarea { font-family:var(--ff); }
   display:flex; flex-direction:column;
   justify-content:center;
   padding:clamp(44px,5vw,72px) clamp(40px,5vw,64px);
-  overflow:hidden;
+  overflow-y:auto;
 }
 .scene-split--rev .text-panel { border-left:none; border-right:1px solid var(--bd); }
 .text-panel--tabs { justify-content:center; }
@@ -268,7 +268,7 @@ input,select,textarea { font-family:var(--ff); }
 /* ═══════════════════════════════════════════════════
    SCENE 2 — ENTERTAINMENT (full-screen)
    ═══════════════════════════════════════════════════ */
-.s2-body { flex-direction:column; justify-content:space-between; padding:36px clamp(40px,6vw,72px) 52px; }
+.s2-body { flex-direction:column; justify-content:space-between; padding:36px clamp(40px,6vw,72px) 52px; overflow-y:auto; }
 .s2-top { display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
 .s2-label { margin-bottom:0; }
 

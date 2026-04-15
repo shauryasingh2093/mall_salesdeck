@@ -63,6 +63,7 @@ let scrollLocked    = false;
 let activeZonePanel = null;
 let activeLightbox  = null;
 let currentAttr     = 'waterpark';
+let activeModal      = null; // Added: fix undefined activeModal
 
 /* ══════════════════════════════════════════════════════
    BOOTSTRAP
@@ -522,4 +523,69 @@ function initForms() {
 function setInner(id, text) {
   const el = document.getElementById(id);
   if (el) el.textContent = text;
+}
+
+/* ══════════════════════════════════════════════════════
+   EXPERIENCE CAROUSEL (Scene 1)
+   ══════════════════════════════════════════════════════ */
+function initCarousel() {
+  const track = document.getElementById('experience-carousel');
+  const next  = document.getElementById('c-next');
+  const prev  = document.getElementById('c-prev');
+  if (!track || !next || !prev) return;
+
+  let pos = 0;
+  const slideW = 152; // slide(140) + gap(12)
+
+  next.addEventListener('click', () => {
+    const max = track.scrollWidth - track.offsetWidth;
+    pos = Math.min(pos + slideW, max);
+    track.style.transform = `translateX(-${pos}px)`;
+  });
+
+  prev.addEventListener('click', () => {
+    pos = Math.max(pos - slideW, 0);
+    track.style.transform = `translateX(-${pos}px)`;
+  });
+}
+
+/* ══════════════════════════════════════════════════════
+   LIGHTBOX SYSTEM
+   ══════════════════════════════════════════════════════ */
+function initLightbox() {
+  const lb     = document.getElementById('lightbox');
+  const closeBtn = document.getElementById('lb-close');
+  if (!lb || !closeBtn) return;
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && activeLightbox) closeLightbox();
+  });
+}
+
+function openLightbox(src, title, desc) {
+  const lb    = document.getElementById('lightbox');
+  const img   = document.getElementById('lb-img');
+  const lbT   = document.getElementById('lb-title');
+  const lbD   = document.getElementById('lb-desc');
+  if (!lb || !img) return;
+
+  img.src = src;
+  if (lbT) lbT.textContent = title || '';
+  if (lbD) lbD.textContent = desc || '';
+
+  lb.classList.add('active');
+  lb.setAttribute('aria-hidden', 'false');
+  activeLightbox = lb;
+  activeModal = null; // Close any modal state tracking
+}
+
+function closeLightbox() {
+  const lb = document.getElementById('lightbox');
+  if (!lb) return;
+  lb.classList.remove('active');
+  lb.setAttribute('aria-hidden', 'true');
+  activeLightbox = null;
 }
