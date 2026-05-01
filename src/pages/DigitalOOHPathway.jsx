@@ -101,11 +101,14 @@ export default function DigitalOOHPathway() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.45 + (i * 0.08) }}
-              className="border border-white/10 bg-white/3 p-5 hover:border-gold-500/30 transition-all duration-300 group cursor-hover"
+              className="relative border border-white/10 bg-white/3 p-5 hover:border-gold-500/50 transition-all duration-500 group cursor-hover overflow-hidden"
             >
-              <p className="text-white font-semibold text-[12px] tracking-wide mb-2 group-hover:text-gold-300 transition-colors duration-300">{f.title}</p>
-              <p className="text-white/45 text-[10px] leading-relaxed mb-4">{f.desc}</p>
-              <div className="border-t border-white/8 pt-3">
+              {/* Ad Glow Effect on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-gold-500/0 via-transparent to-transparent group-hover:from-gold-500/10 transition-all duration-700" />
+              
+              <p className="text-white font-semibold text-[12px] tracking-wide mb-2 group-hover:text-gold-300 transition-colors duration-300 relative z-10">{f.title}</p>
+              <p className="text-white/45 text-[10px] leading-relaxed mb-4 relative z-10">{f.desc}</p>
+              <div className="border-t border-white/8 pt-3 relative z-10">
                 <p className="text-white/25 text-[9px] uppercase tracking-widest mb-1">Specs</p>
                 <p className="text-white/50 text-[10px] mb-2">{f.specs}</p>
                 <p className="text-white/25 text-[9px] uppercase tracking-widest mb-1">Reach</p>
