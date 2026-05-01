@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
+import AssetPreloader from '../components/Interactive/AssetPreloader';
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ export default function LandingPage() {
       transition={{ duration: 0.4, ease: "easeOut" }}
       className="relative w-full h-screen overflow-hidden bg-dark-900 cursor-none flex items-center justify-center"
     >
+      <AssetPreloader assets={['/assets/story.mp4', '/assets/prologue.mp3']} />
       
       {/* Background Media */}
       <div className="absolute inset-0 z-0">
@@ -23,6 +25,7 @@ export default function LandingPage() {
           className="w-full h-full relative filter contrast-110 brightness-75"
         >
           <video
+            preload="auto"
             autoPlay
             loop
             muted

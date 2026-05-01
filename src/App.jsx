@@ -26,12 +26,14 @@ import LandingPage from './pages/LandingPage';
 import Prologue from './pages/Prologue';
 import SlideController from './components/Interactive/SlideController';
 import CategoryNavigationBar from './components/Interactive/CategoryNavigationBar';
+import LoadingScreen from './components/Interactive/LoadingScreen';
 import { useDeckNavigation } from './hooks/useDeckNavigation';
 import { useState, useEffect } from 'react';
 
 function App() {
   const location = useLocation();
   const [isMapOpen, setIsMapOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   
   // Initialize the global keyboard deck navigation
   useDeckNavigation();
@@ -44,6 +46,7 @@ function App() {
 
   return (
     <div className={`w-screen h-screen bg-dark-900 text-white selection:bg-gold-500/30 overflow-hidden ${isMapOpen ? 'cursor-auto' : 'cursor-none'}`}>
+      <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
       {!isMapOpen && <CustomCursor />}
       <MapModal isOpen={isMapOpen} onClose={() => setIsMapOpen(false)} />
       <CategoryNavigationBar />

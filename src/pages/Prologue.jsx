@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ChevronRight, Volume2, VolumeX } from 'lucide-react';
+import AssetPreloader from '../components/Interactive/AssetPreloader';
 
 export default function Prologue() {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ export default function Prologue() {
       transition={{ duration: 0.8, ease: "easeInOut" }}
       className="relative w-full h-screen overflow-hidden bg-dark-900 cursor-none flex items-center justify-center"
     >
+      <AssetPreloader assets={['/assets/hub.png']} />
       
       {/* Fullscreen Video Presentation */}
       <div className="absolute inset-0 z-0 bg-dark-900">
@@ -37,6 +39,7 @@ export default function Prologue() {
             autoPlay
             muted
             playsInline
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
             src="/assets/story.mp4"
             onEnded={() => navigate('/hub')} // Automatically navigate when video finishes
@@ -46,6 +49,7 @@ export default function Prologue() {
           <audio 
             ref={audioRef}
             autoPlay 
+            preload="auto"
             src="/assets/prologue.mp3" 
             onEnded={() => console.log('Audio finished')} 
           />

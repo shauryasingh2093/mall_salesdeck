@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Map, ArrowRight } from 'lucide-react';
+import AssetPreloader from '../components/Interactive/AssetPreloader';
 
 const PATHWAYS = [
   { id: 'retail', title: 'Retail & Luxury', path: '/retail' },
@@ -49,6 +50,14 @@ export default function CentralHub() {
       transition={{ duration: 0.5, ease: "easeInOut" }}
       className="relative w-full h-screen flex flex-col justify-center overflow-hidden bg-dark-900 cursor-none"
     >
+      <AssetPreloader assets={[
+        '/assets/luxury_retail.png',
+        '/assets/crowd_event.png',
+        '/assets/galaxyland.png',
+        '/assets/dining_elegant.png',
+        '/assets/hotel.png',
+        '/assets/genz_trendsetters.png'
+      ]} />
 
       {/* Background: hub.png full-bleed + overlays */}
       <div className="absolute inset-0 z-0 overflow-hidden">
