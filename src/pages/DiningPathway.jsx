@@ -1,0 +1,157 @@
+import { motion, AnimatePresence } from 'framer-motion';
+
+const FallbackImage = ({ src, alt, className, style, delay }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
+      className={`relative overflow-hidden bg-white/5 border border-white/10 ${className}`}
+      style={style}
+    >
+      <img
+        src={src}
+        alt={alt}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] hover:scale-110"
+        onError={(e) => {
+          e.target.style.display = 'none';
+          e.target.nextSibling.style.display = 'flex';
+        }}
+      />
+      <div className="absolute inset-0 hidden flex-col items-center justify-center text-center p-4 bg-dark-800" style={{ display: 'none' }}>
+        <span className="text-white/20 text-xs font-mono mb-2">Missing Asset</span>
+        <span className="text-white/40 text-sm font-semibold">{src}</span>
+      </div>
+    </motion.div>
+  );
+};
+
+export default function DiningPathway() {
+  return (
+    <motion.main 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, filter: 'blur(10px)' }}
+      transition={{ duration: 0.4 }}
+      className="relative w-full h-screen bg-dark-900 overflow-hidden flex cursor-none"
+    >
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-dark-900 via-dark-900 to-[#1e1715] opacity-80" />
+
+      <div className="absolute top-0 left-0 right-0 p-8 flex justify-between items-center z-50 pointer-events-none">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex items-center gap-4"
+        >
+          <img src="/assets/wem-logo.png" alt="WEM" className="w-10 h-10 object-contain" />
+          <div className="flex flex-col">
+            <span className="font-sans font-semibold tracking-[0.2em] text-xs uppercase text-white/80">West Edmonton Mall</span>
+            <span className="text-white/40 text-[10px] tracking-widest uppercase">Commercial Deck</span>
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="relative z-10 w-full h-full flex flex-col lg:flex-row items-center justify-between">
+        
+        <div className="w-full lg:w-[45%] h-full flex flex-col justify-center px-8 md:px-16 lg:px-24 pt-32 pb-16 relative z-20">
+          
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+            className="w-12 h-[1px] bg-gold-500 mb-8 origin-left"
+          />
+
+          <motion.p 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-gold-500 text-xs font-semibold tracking-[0.3em] uppercase mb-4"
+          >
+            Dining
+          </motion.p>
+
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="text-5xl lg:text-6xl xl:text-7xl font-display font-light text-white mb-6 leading-[1.1]"
+          >
+            Gastronomic <br />
+            <span className="italic text-white/60">Excellence.</span>
+          </motion.h1>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="text-sm md:text-base text-white/50 leading-relaxed max-w-md font-light mb-6"
+          >
+            A world-class culinary landscape spanning over 100 venues. From immersive themed dining on Bourbon Street to elevated international cuisine, our ecosystem is designed to satisfy the palates of a diverse, global audience.
+          </motion.p>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="flex items-center gap-8 border-t border-white/10 pt-6 mb-6"
+          >
+            <div>
+              <p className="text-3xl font-display text-white mb-1">100+</p>
+              <p className="text-[9px] uppercase tracking-widest text-white/40 font-semibold">Dining Venues</p>
+            </div>
+            <div className="w-[1px] h-12 bg-white/10" />
+            <div>
+              <p className="text-3xl font-display text-white mb-1">20+</p>
+              <p className="text-[9px] uppercase tracking-widest text-white/40 font-semibold">Patio Experiences</p>
+            </div>
+          </motion.div>
+
+          {/* Theme Dining */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.85 }}
+          >
+            <p className="text-white/30 text-[9px] font-bold tracking-[0.3em] uppercase mb-4">Signature Theme Dining</p>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { name: 'BRBN St.', desc: 'High-energy nightlife & upscale dining district' },
+                { name: 'Europa Blvd', desc: 'Elegant cafés & continental cuisine' },
+                { name: 'Food Courts', desc: 'Mass-market reach with 40+ global brands' },
+              ].map(({ name, desc }) => (
+                <div key={name} className="px-4 py-2 border border-white/15 bg-white/5 hover:border-gold-500/40 transition-colors duration-300 cursor-hover max-w-[200px]">
+                  <p className="text-white/90 text-[11px] font-semibold tracking-wide">{name}</p>
+                  <p className="text-white/35 text-[9px] mt-0.5 leading-tight">{desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+        </div>
+
+        <div className="w-full lg:w-[55%] h-full relative">
+          <FallbackImage 
+            src="/assets/dining.png" 
+            alt="Dining Hero" 
+            className="w-full h-full"
+            delay={0.2}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-dark-900 via-dark-900/40 to-transparent pointer-events-none" />
+        </div>
+
+      </div>
+
+      <div className="absolute inset-0 pointer-events-none z-30 overflow-hidden">
+        <FallbackImage 
+          src="/assets/dining_elegant.png" 
+          alt="Dining Editorial 1" 
+          className="absolute bottom-16 left-[40%] w-64 h-80 lg:w-72 lg:h-96 rounded-sm shadow-2xl shadow-black/50 hidden md:block"
+          delay={1.8}
+        />
+      </div>
+
+    </motion.main>
+  );
+}

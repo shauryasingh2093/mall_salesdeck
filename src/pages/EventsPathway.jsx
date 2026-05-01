@@ -1,151 +1,158 @@
-import { motion } from 'framer-motion';
-import DeckContainer from '../components/Layout/DeckContainer';
-import YouTubeBackground from '../components/Interactive/YouTubeBackground';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const textReveal = {
-  hidden: { y: '100%' },
-  show: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
+const FallbackImage = ({ src, alt, className, style, delay }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
+      className={`relative overflow-hidden bg-white/5 border border-white/10 ${className}`}
+      style={style}
+    >
+      <img
+        src={src}
+        alt={alt}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] hover:scale-110"
+        onError={(e) => {
+          e.target.style.display = 'none';
+          e.target.nextSibling.style.display = 'flex';
+        }}
+      />
+      <div className="absolute inset-0 hidden flex-col items-center justify-center text-center p-4 bg-dark-800" style={{ display: 'none' }}>
+        <span className="text-white/20 text-xs font-mono mb-2">Missing Asset</span>
+        <span className="text-white/40 text-sm font-semibold">{src}</span>
+      </div>
+    </motion.div>
+  );
 };
 
-const Slide1 = () => (
-  <div className="w-full h-full flex flex-col justify-center px-12 lg:px-24 max-w-7xl mx-auto relative cursor-hover">
-    <div className="overflow-hidden mb-4">
-      <motion.span variants={textReveal} className="text-blue-400 font-sans tracking-[0.3em] uppercase text-xs block">
-        Events & Sponsorships
-      </motion.span>
-    </div>
-    <div className="overflow-hidden mb-12">
-      <motion.h2 variants={textReveal} className="text-7xl lg:text-9xl font-display font-light leading-[0.9]">
-        Where Moments <br/>
-        <span className="italic text-white/70">Are Made</span>
-      </motion.h2>
-    </div>
-    
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-      <motion.div 
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 0.4 }}
-        className="w-full aspect-[16/9] relative rounded-[2rem] overflow-hidden filter contrast-125"
-      >
-        <YouTubeBackground videoId="PLACEHOLDER_EVENTS_ID" />
-      </motion.div>
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="pt-8 md:pt-24"
-      >
-        <p className="text-xl text-white/60 leading-relaxed font-light mb-8">
-          200+ programmed events per year. Concerts, summits, product launches, and fashion shows set against the backdrop of 12 world-class attractions.
-        </p>
-        <div className="flex gap-12">
-          <div>
-            <p className="text-4xl font-display font-light text-white">8,000</p>
-            <p className="text-xs uppercase tracking-[0.2em] text-white/40 mt-1">Max Capacity</p>
-          </div>
-          <div>
-            <p className="text-4xl font-display font-light text-white">400K</p>
-            <p className="text-xs uppercase tracking-[0.2em] text-white/40 mt-1">Event-Day Reach</p>
-          </div>
-        </div>
-      </motion.div>
-    </div>
-  </div>
-);
-
-const Slide2 = () => (
-  <div className="w-full h-full flex flex-col justify-center px-12 lg:px-24 max-w-7xl mx-auto relative cursor-hover">
-    <div className="flex flex-col md:flex-row gap-16 items-center">
-      <motion.div 
-        initial={{ scale: 0.95, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-        className="flex-1 w-full aspect-[3/4] relative rounded-[2rem] overflow-hidden order-2 md:order-1 filter contrast-125 brightness-90"
-      >
-        <YouTubeBackground videoId="PLACEHOLDER_ICEPALACE_ID" />
-      </motion.div>
-      <div className="flex-1 order-1 md:order-2">
-        <div className="overflow-hidden mb-6">
-          <motion.h3 variants={textReveal} className="text-6xl lg:text-7xl font-display font-light">Ice Palace</motion.h3>
-        </div>
-        <motion.div 
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="pl-8 border-l border-white/20"
-        >
-          <p className="text-lg text-white/60 mb-10 leading-relaxed font-light">
-            Full NHL-regulation ice rink used by the Edmonton Oilers for practice sessions. 2,500 event capacity, 52-week availability, and premium visibility.
-          </p>
-          <div className="flex flex-col gap-6">
-            <div className="flex items-start gap-4">
-              <span className="text-blue-400 font-sans text-xs tracking-widest mt-1">01</span>
-              <div>
-                <p className="text-white font-medium mb-1">Naming Rights</p>
-                <p className="text-sm text-white/40">Exclusive venue sponsorship opportunities.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="text-blue-400 font-sans text-xs tracking-widest mt-1">02</span>
-              <div>
-                <p className="text-white font-medium mb-1">Dasherboard Ads</p>
-                <p className="text-sm text-white/40">High-visibility placement during 200+ annual events.</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </div>
-  </div>
-);
-
-const Slide3 = () => (
-  <div className="w-full h-full flex flex-col justify-center px-12 lg:px-24 max-w-7xl mx-auto relative cursor-hover">
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <div className="lg:col-span-5 relative z-10">
-        <div className="overflow-hidden mb-6">
-          <motion.h3 variants={textReveal} className="text-6xl font-display font-light">Grand Central Atrium</motion.h3>
-        </div>
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="text-lg text-white/60 leading-relaxed font-light mb-12"
-        >
-          The beating heart of WEM. A soaring glass atrium with 30M+ annual footfall, premium event activation space, and maximum brand visibility from all four floors.
-        </motion.p>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="grid grid-cols-2 gap-8"
-        >
-          <div className="border-t border-white/20 pt-4">
-            <p className="text-2xl font-display text-white mb-2">Prime OOH</p>
-            <p className="text-xs uppercase tracking-[0.2em] text-white/40">Digital Signage</p>
-          </div>
-          <div className="border-t border-white/20 pt-4">
-            <p className="text-2xl font-display text-white mb-2">Pop-Up</p>
-            <p className="text-xs uppercase tracking-[0.2em] text-white/40">Seasonal Kiosks</p>
-          </div>
-        </motion.div>
-      </div>
-      <motion.div 
-        initial={{ scale: 0.95, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-        className="lg:col-span-7 relative rounded-[2rem] overflow-hidden aspect-[4/3] filter contrast-125"
-      >
-        <YouTubeBackground videoId="PLACEHOLDER_ATRIUM_ID" />
-      </motion.div>
-    </div>
-  </div>
-);
-
 export default function EventsPathway() {
-  const slides = [<Slide1 key="1" />, <Slide2 key="2" />, <Slide3 key="3" />];
+  return (
+    <motion.main 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, filter: 'blur(10px)' }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="relative w-full h-screen bg-dark-900 overflow-hidden flex cursor-none"
+    >
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-dark-900 via-dark-900 to-[#1a1118] opacity-80" />
 
-  return <DeckContainer slides={slides} pathwayName="Events & Venues" />;
+      <div className="absolute top-0 left-0 right-0 p-8 flex justify-between items-center z-50 pointer-events-none">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex items-center gap-4"
+        >
+          <img src="/assets/wem-logo.png" alt="WEM" className="w-10 h-10 object-contain" />
+          <div className="flex flex-col">
+            <span className="font-sans font-semibold tracking-[0.2em] text-xs uppercase text-white/80">West Edmonton Mall</span>
+            <span className="text-white/40 text-[10px] tracking-widest uppercase">Commercial Deck</span>
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="relative z-10 w-full h-full flex flex-col lg:flex-row items-center justify-between">
+        
+        <div className="w-full lg:w-[45%] h-full flex flex-col justify-center px-8 md:px-16 lg:px-24 pt-32 pb-16 relative z-20">
+          
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+            className="w-12 h-[1px] bg-gold-500 mb-8 origin-left"
+          />
+
+          <motion.p 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-gold-500 text-xs font-semibold tracking-[0.3em] uppercase mb-4"
+          >
+            Experiences
+          </motion.p>
+
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="text-5xl lg:text-6xl xl:text-7xl font-display font-light text-white mb-6 leading-[1.1]"
+          >
+            Venues of <br />
+            <span className="italic text-white/60">Magnitude.</span>
+          </motion.h1>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="text-sm md:text-base text-white/50 leading-relaxed max-w-md font-light mb-12"
+          >
+            From high-capacity arenas to intimate corporate venues, our event spaces are engineered for spectacle. We host world-class concerts, international trade shows, and brand activations that demand a global audience.
+          </motion.p>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="flex items-center gap-8 border-t border-white/10 pt-8 mb-10"
+          >
+            <div>
+              <p className="text-3xl font-display text-white mb-1">5+</p>
+              <p className="text-[9px] uppercase tracking-widest text-white/40 font-semibold">Premium Venues</p>
+            </div>
+            <div className="w-[1px] h-12 bg-white/10" />
+            <div>
+              <p className="text-3xl font-display text-white mb-1">2M+</p>
+              <p className="text-[9px] uppercase tracking-widest text-white/40 font-semibold">Annual Event Attendees</p>
+            </div>
+          </motion.div>
+
+          {/* Groups section */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.85 }}
+          >
+            <p className="text-white/30 text-[9px] font-bold tracking-[0.3em] uppercase mb-4">Groups &amp; Entertainment</p>
+            <div className="flex flex-wrap gap-2">
+              {['Birthdays', 'Educational', 'Corporate & Team', 'Fundraisers', 'Adult Parties & Groups', 'Tour Groups'].map(g => (
+                <span key={g} className="px-3 py-1 rounded-full text-[10px] text-white/70 border border-white/15 bg-white/5 tracking-wide">
+                  {g}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+        </div>
+
+        <div className="w-full lg:w-[55%] h-full relative">
+          <FallbackImage 
+            src="/assets/crowd_event.png" 
+            alt="Events Hero" 
+            className="w-full h-full"
+            delay={0.2}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-dark-900 via-dark-900/40 to-transparent pointer-events-none" />
+        </div>
+
+      </div>
+
+      <div className="absolute inset-0 pointer-events-none z-30 overflow-hidden">
+        <FallbackImage 
+          src="/assets/brbn_street.png" 
+          alt="Events Editorial 1" 
+          className="absolute bottom-16 left-[40%] w-64 h-80 lg:w-72 lg:h-96 rounded-sm shadow-2xl shadow-black/50 hidden md:block"
+          delay={1.8}
+        />
+        <FallbackImage 
+          src="/assets/ice_rink.png" 
+          alt="Events Editorial 2" 
+          className="absolute top-32 right-[25%] w-48 h-64 lg:w-56 lg:h-72 rounded-sm shadow-2xl shadow-black/50 hidden lg:block"
+          delay={2.1}
+        />
+      </div>
+
+    </motion.main>
+  );
 }
